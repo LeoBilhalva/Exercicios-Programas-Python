@@ -659,7 +659,7 @@ import string
 #       "\nQuantidade de homens com menos de 30 anos:", mediaHomensIdade,
 #       "\nMedia numero de filhos:", mediaFilho//(cont+1),
 #       "\nRenda do homem mais velho: ", rendaHomemMaisVelho,
-#       "\nIdade da mulher com maior renda: ", idadeMulherMaiorRenda,"\n") 
+#       "\nIdade da mulher com maior renda: ", idadeMulherMaiorRenda,"\n")
 
 # Fatorial
 # num = int(input("Digite um valor: "))
@@ -726,7 +726,7 @@ import string
 #         aux += 1
 #     print(termo)
 
-#Numero perfeito
+# Numero perfeito
 # num = int(input("Digite o número: "))
 # aux = 1
 # soma = 0
@@ -737,11 +737,11 @@ import string
 #         print(aux)
 #         soma += aux
 #     aux += 1
-# print("Soma: ", soma)    
+# print("Soma: ", soma)
 # if soma == num:
 #     print("Numero perfeito!")
 # else:
-#     print("O número não é perfeito...")  
+#     print("O número não é perfeito...")
 
 # Zé e chico
 # ze = 110
@@ -753,3 +753,68 @@ import string
 #     print("- ",ze, chico)
 #     anos += 1
 # print(f"Levou {anos} anos para o Zé ficar maior que o Chico.")
+
+# Par e números primos
+# vezes = int(input("Quantos numeros? "))
+# contVezes = 1
+# num = 4
+# while contVezes <= vezes:
+#     met1 = num//2
+#     met2 = met1
+#     while met1 <= met2:
+#         aux = 1
+#         contMet1 = 0
+#         while aux <= met1:
+#             if met1%aux == 0: contMet1 += 1
+#             aux +=1
+#         if contMet1 == 2:
+#             aux = 1
+#             contMet2 = 0
+#             while aux <= met2:
+#                 if met2%aux == 0: contMet2 += 1
+#                 aux += 1
+#             if contMet2 == 2:
+#                 print("\nNumero: ",num,
+#                     "\ndivisores primos: ", met1, met2)
+#                 break
+#         met1 -= 1
+#         met2 += 1
+#     num += 2
+#     contVezes += 1
+
+# Fatorial
+# for num in range(0, 10):
+#     total = 1
+#     aux = 2
+#     while aux <= num:
+#         total = total * aux
+#         aux += 1
+#     print("Fatorial do número", num, ": ", total)
+
+# Intervalo de numeros
+# print("Digite um valor negativo para sair do programa.")
+# intervalo1 = 0
+# intervalo2 = 0
+# intervalo3 = 0
+# intervalo4 = 0
+# total = 0
+# while True:
+#     num = int(input("Digite o valor: "))
+#     if num < 0:
+#         break
+#     else:
+#         total += 1
+#         if num>=0 and num<=25:
+#             intervalo1 += 1
+#         elif num <= 50:
+#             intervalo2 += 1
+#         elif num <= 75:
+#             intervalo3 += 1
+#         elif num <=100:
+#             intervalo4 += 1
+# print("[0;25]:", intervalo1,
+#       "\n[26;50]:", intervalo2,
+#       "\n[51;75]:", intervalo3,
+#       "\n[76;100]:", intervalo4,
+#       "\nQuantidade total de valores: ", total)
+
