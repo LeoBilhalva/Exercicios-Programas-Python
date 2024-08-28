@@ -660,4 +660,96 @@ import string
 #       "\nMedia numero de filhos:", mediaFilho//(cont+1),
 #       "\nRenda do homem mais velho: ", rendaHomemMaisVelho,
 #       "\nIdade da mulher com maior renda: ", idadeMulherMaiorRenda,"\n") 
-  
+
+# Fatorial
+# num = int(input("Digite um valor: "))
+# fatorial = num
+# if num == 0:
+#     print(num+1)
+# elif num < 0:
+#     print("Número negativo.")
+# else:
+#     while num > 2:
+#         fatorial = fatorial * (num-1)
+#         num -= 1
+#     print("Fatorial: ",fatorial)
+
+# Divisores
+# num = int(input("Digite um valor: "))
+# aux = num
+# if num <= 0:
+#     print("O valor precisa ser maior que 0.")
+# else:
+#     while aux > 0:
+#         if num%aux == 0:
+#             print(aux)
+#         aux -= 1
+
+# Numeros primos
+# num = int(input("Digite um valor: "))
+# aux = 1
+# cont = 0
+# if num < 0:
+#     print("Valor deve ser positivo.")
+# else:
+#     while aux <= num:
+#         if num%aux == 0:
+#             cont += 1
+#         if cont >= 3:
+#             print("O número não é primo.")
+#             break
+#         aux += 1
+#     if cont == 2:
+#         print("O número é primo.")
+
+# Calculo termos
+# num = int(input("Quantos termos? "))
+# if num <= 0:
+#     print("Numero inválido.")
+# else:
+#     aux = 1
+#     termo = 0
+#     while aux <= num:
+#         termo = termo + 1/aux
+#         aux += 1
+#     print("Soma dos termos: ", termo)
+
+# Calculo termos 2
+# num = int(input("Quantos termos? "))
+# aux = 1
+# termo = 0
+# if num <= 0: print("Número inválido!")
+# else:
+#     while aux <= num:
+#         termo += aux*2/(aux*2-1)
+#         print(termo)
+#         aux += 1
+#     print(termo)
+
+#Numero perfeito
+# num = int(input("Digite o número: "))
+# aux = 1
+# soma = 0
+# while num <= 0:
+#     num = int(input("Numero inválido, digite novamente: "))
+# while aux <= num/2:
+#     if num%aux == 0:
+#         print(aux)
+#         soma += aux
+#     aux += 1
+# print("Soma: ", soma)    
+# if soma == num:
+#     print("Numero perfeito!")
+# else:
+#     print("O número não é perfeito...")  
+
+# Zé e chico
+# ze = 110
+# chico = 150
+# anos = 0
+# while ze <= chico:
+#     ze += 3
+#     chico += 2
+#     print("- ",ze, chico)
+#     anos += 1
+# print(f"Levou {anos} anos para o Zé ficar maior que o Chico.")
