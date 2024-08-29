@@ -818,3 +818,41 @@ import string
 #       "\n[76;100]:", intervalo4,
 #       "\nQuantidade total de valores: ", total)
 
+# Funções
+# def imc(peso, altura):
+#     return peso / altura ** 2
+# p = float(input("Digite o peso: "))
+# a = float(input("Digite a altura: "))
+# print(f"IMC: {imc(p, a)}")
+
+#Funções 2
+# def ehprimo(valor):
+#     for i in range(2,valor//2+1):
+#         if valor%i == 0:
+#             return False
+#     return True
+# v = int(input("Digite um valor par maior que 2: "))
+# while v <= 2:
+#     v = int(input("Erro! Digite um valor par maior que 2: "))
+# div1 = v//2
+# div2 = div1
+# while ehprimo(div1) == False or ehprimo(div2) == False:
+#     div1 -= 1
+#     div2 += 1
+# print("Para o número: ", v)
+# print("Os primos são: ", div1,div2)
+
+# Funções 3
+# def ehprimo(valor):
+#     for i in range(2,valor//2+1):
+#         if valor%i == 0:
+#             return False
+#     return True
+# def goldbach(numero):
+#     for v1 in range(2, numero):
+#         v2 = numero - v1
+#         if ehprimo(v1) and ehprimo(v2):
+#             return v1, v2
+# for i in range(4,102,2):
+#     primo1, primo2 = goldbach(i)
+#     print(f"Para o valor {i}, os primos são: {primo1} + {primo2}")
