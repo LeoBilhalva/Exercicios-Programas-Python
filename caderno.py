@@ -1,6 +1,7 @@
 import math
 import random
 import string
+import timeit
 
 # Calculos dois numeros
 # a = int(input("Digite o primeiro valor: "))
@@ -825,7 +826,7 @@ import string
 # a = float(input("Digite a altura: "))
 # print(f"IMC: {imc(p, a)}")
 
-#Funções 2
+# Funções 2
 # def ehprimo(valor):
 #     for i in range(2,valor//2+1):
 #         if valor%i == 0:
@@ -856,3 +857,97 @@ import string
 # for i in range(4,102,2):
 #     primo1, primo2 = goldbach(i)
 #     print(f"Para o valor {i}, os primos são: {primo1} + {primo2}")
+
+# Distância entre dois pontos
+# def distancia(x1,y1,x2,y2):
+#     deltax = x1-x2
+#     deltay = y1-y2
+#     dist = math.sqrt(deltax**2 + deltay**2)
+#     return dist
+# x1 = float(input("x1: "))
+# y1 = float(input("y1: "))
+# x2 = float(input("x2: "))
+# y2 = float(input("y2: "))
+# print(f"A distância eh: {distancia(x1,y1,x2,y2):0.5f}")
+
+# Coeficiente Binomial
+# def fatorial(n):
+#     """Realiza o fatorial de um número"""
+#     if n < 0:
+#         return 0
+#     total = 1
+#     for i in range(2, n+1):
+#         total = i * total
+#     return total
+
+# Coeficiente Binomial2
+# def binomial(n, k):
+#     return fatorial(n)//(fatorial(k)*fatorial(n-k))
+
+# Coeficiente Binomial3
+# def binomial2(n, k):
+#     prod = 1
+#     total = k
+#     if n-k < k:
+#         total = n-k
+#     for i in range(1, total+1):
+#         prod = prod * ((n+1-i)/i)
+#     return int(prod)
+
+# Triangulo de pascal
+# def triangulo(n):
+#     for i in range(n):
+#         for e in range(i+1):
+#             print(binomial2(i, e), end="")
+#         print()
+# print(timeit.timeit("triangulo(10)", globals=globals(), number=1))
+# print(timeit.timeit("triangulo2(10)", globals=globals(), number=1,))
+
+
+# Jogo da forca
+# def verifica(let, palav):
+#     """Verifica se a palavra contém a letra e retorna as coordenadas de onde estão"""
+#     posEncontrado = ""
+#     for l in range(len(palav)):
+#         if let == palav[l]:
+#             posEncontrado = posEncontrado + str(l)
+#     return posEncontrado
+# def atualiza(let, pos, desc):
+#     """Atualiza e retorna a string descoberto utilizando as coordenadas passadas pela função verifica"""
+#     for p in pos:
+#         desc = desc[:int(p)] + let + desc[int(p)+1:]
+#     return desc
+# vida = 5
+# palavra = "amora"
+# descoberto = len(palavra) * "-"
+# coord = ""
+# historico = []
+# string.ascii_lowercase
+# print(f"Jogo da forca\nVocê possui {vida} vidas")
+# while vida > 0:
+#     print("Palavra: ", descoberto)
+#     print("Letras já escolhidas: ", historico)
+#     letra = str(input("Digite uma letra para o chute: "))
+
+#     #Verifica a entrada de valor não alfabeticos e entradas maiores que uma letra
+#     while letra not in string.ascii_letters or len(letra) > 1 or len(letra) == 0:
+#         print("Digite somente uma letra!")
+#         letra = str(input("Digite uma letra para o chute: "))
+#     #Verifica se o usuário já digitou a letra
+#     while letra in historico: 
+#         letra = str(input("Você já digitou essa letra! Escolha novamente: "))
+#     letra = letra.lower()
+#     historico.append(letra)
+#     coord = verifica(letra, palavra)
+#     if coord == "":
+#         vida -= 1
+#         print("Errou!\nVidas: ",vida)
+#     else:
+#         descoberto = atualiza(letra, coord, descoberto)
+#         print("Acertou!")
+#         if "-" not in descoberto:
+#             print("Você ganhou!\nPalavra: ",palavra)
+#             exit()
+# print("Você perdeu! Tente novamente.")
+# print("Palavra:",palavra)
+
