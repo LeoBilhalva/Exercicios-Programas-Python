@@ -921,23 +921,22 @@ import timeit
 # palavra = "amora"
 # descoberto = len(palavra) * "-"
 # coord = ""
-# historico = []
+# historico = ""
 # string.ascii_lowercase
 # print(f"Jogo da forca\nVocê possui {vida} vidas")
 # while vida > 0:
 #     print("Palavra: ", descoberto)
-#     print("Letras já escolhidas: ", historico)
+#     print("Letras já escolhidas: ",historico)
 #     letra = str(input("Digite uma letra para o chute: "))
-
 #     #Verifica a entrada de valor não alfabeticos e entradas maiores que uma letra
 #     while letra not in string.ascii_letters or len(letra) > 1 or len(letra) == 0:
 #         print("Digite somente uma letra!")
 #         letra = str(input("Digite uma letra para o chute: "))
 #     #Verifica se o usuário já digitou a letra
-#     while letra in historico: 
+#     while letra in historico:
 #         letra = str(input("Você já digitou essa letra! Escolha novamente: "))
 #     letra = letra.lower()
-#     historico.append(letra)
+#     historico += letra
 #     coord = verifica(letra, palavra)
 #     if coord == "":
 #         vida -= 1
@@ -950,4 +949,168 @@ import timeit
 #             exit()
 # print("Você perdeu! Tente novamente.")
 # print("Palavra:",palavra)
+
+# Utilização de listas
+# lista = []
+# contaPar = 0
+# for i in range(30):
+#     lista.append(random.randint(1,500))
+# maior = lista[0]
+# for i in lista:
+#     if i > maior: maior = i
+#     if i%2==0: contaPar += 1
+# print(lista)
+# print(len(lista))
+# print("Maior: ", maior)
+# print("Pares: ", contaPar)
+
+# Utilização de listas 2
+# lista = []
+# for i in range(30):
+#     lista.append(random.randint(1,50))
+# print(lista)
+# print(lista.count(1))
+# print(sum(lista))
+# print(min(lista))
+# print(max(lista))
+# lista.sort()
+# print(lista)
+# lista.reverse()
+# print(lista)
+
+# Listas notas dos alunos
+# notas = []
+# acimaDaMedia = 0
+# abaixoDaMedia = 0
+# for i in range(15):
+#     notas.append(random.randint(0,10))
+# media = sum(notas)//len(notas)
+# for i in notas:
+#     if i > media:
+#         acimaDaMedia += 1
+#     elif i < media:
+#         abaixoDaMedia += 1
+# print(notas)
+# print("Media: ", media)
+# print("Acima: ",acimaDaMedia)
+# print("Na media: ", notas.count(media))
+# print("Abaixo: ", abaixoDaMedia)
+# print("Menor nota: ",min(notas))
+# print("Maior nota: ",max(notas))
+
+# Votação gestor
+# avaliacao = []
+# for i in range(25):
+#     avaliacao.append(random.randint(1, 5))
+# lValores = []
+# lConceito = ["Excelente", "Bom", "Regular", "Ruim", "Péssimo"]
+# lValores = [avaliacao.count(5)] + [avaliacao.count(4)] + \
+#     [avaliacao.count(3)] + [avaliacao.count(2)] + [avaliacao.count(1)]
+# maiorVal = lValores[0]
+# MaiorConc = lConceito[0]
+# for i in range(5):
+#     print(lConceito[i], "-", lValores[i])
+#     if lValores[i] > maiorVal:
+#         maiorVal = lValores[i]
+#         MaiorConc = lConceito[i]
+# print("Maior: ", maiorVal, MaiorConc)
+
+# Calculo idades
+# idades = []
+# for i in range(20):
+#     idades.append(random.randint(1,100))
+# print("Maior idade",max(idades))
+# print("Menor idade",min(idades))
+# print("Media", sum(idades)/len(idades))
+
+# 10 maiores valores
+# valores = []
+# lOrdenada = []
+# for i in range(30):
+#     valores.append(random.randint(0,100))
+# lOrdenada = valores
+# lOrdenada.sort()
+# lOrdenada.reverse()
+# print(lOrdenada[:10])
+
+# Calculo Jogadores
+# jogadores = []
+# estatistica = []
+# for i in range(5):
+#     nome = input(f"Digite o nome do jogador {i}:" )
+#     pontos = random.randint(0,100)
+#     asssitencias = random.randint(0,100)
+#     rebotes = random.randint(0,100)
+#     jogadores.append((nome, pontos, asssitencias, rebotes))
+# for j in jogadores:
+#     soma = 0
+#     for d in range(1,4):
+#         soma += j[d]
+#     estatistica.append((j[0],soma/3))
+# melhor = estatistica[0]
+# for item in estatistica:
+#     if item[1] > melhor[1]:
+#         melhor = item
+# print(melhor)
+
+# Peças vendidas - utilizando tuplas
+# vendas = []
+# tamanhos = []
+# cores = []
+# catTamanhos = ("P", "M", "G")
+# catCores = ("Branco", "Preto", "Azul")
+# for peca in range(50):
+#     tamanho = random.sample(catTamanhos, k=1)[0]
+#     cor = random.sample(catCores, k=1)[0]
+#     tamanhos.append(tamanho)
+#     cores.append(cor)
+#     vendas.append((tamanho, cor))
+# somaTamanhos = \
+#     tamanhos.count("P"), tamanhos.count("M"), tamanhos.count("G")
+# print(catTamanhos, "\n", somaTamanhos)
+# somaCores = \
+#     cores.count("Branco"), cores.count("Preto"), cores.count("Azul")
+# print(catCores, "\n", somaCores)
+# print()
+# print("O tamanho mais vendido foi: ", catTamanhos[somaTamanhos.index(
+#     max(somaTamanhos))], somaTamanhos[somaTamanhos.index(max(somaTamanhos))])
+# print(f"Foram vendidas {somaTamanhos[1]} para o tamanho M")
+# print("Cor mais vendida: ",catCores[somaCores.index(max(somaCores))])
+
+# Introdução a arquivos
+# Motivos para abrir o arquivo: r = leitura; w = gravação; a = alteração append
+# arq = open("direção arquivo", "r")
+# Abrir para gravar: variavelArquivo.write(item)k
+# arq = open("direção arquivo", "w") - Zera o arquivo para inserir os conteúdos
+# for para percorrer o documento
+# split para separar em listas
+# Fechar o arquivo com arq.close()
+
+# def gravacao():
+#     arq = open("Faculdade\\Exercicios-Programas-Python\\altura.txt", "w")
+#     for i in range(5):
+#         nome = input("Digite um nome: ")
+#         altura = random.randint(150,200)/100
+#         arq.write(nome + ' - ' + str(altura) + "\n")
+#     arq.close()
+# def leitura():
+#     alunos = []
+#     arq = open("Faculdade\\Exercicios-Programas-Python\\altura.txt", "r")
+#     for i in arq:
+#         linha = i[:-1].split(" - ")
+#         alunos.append((linha[0],float(linha[1])))
+#     arq.close()
+#     return alunos
+# gravacao()
+# listaAlunos = leitura()
+# maisAlto = ""
+# altMaisAlto = 0
+# somaAltura = 0
+# for i in listaAlunos:
+#     if i[1] > altMaisAlto:
+#         maisAlto = i[0]
+#         altMaisAlto = i[1]
+#     somaAltura += i[1]
+# print(f"Nome do mais alto: {maisAlto}, com {altMaisAlto}m")
+# print(f"Media das alturas: {(somaAltura/len(listaAlunos)):0.2f}")
 
