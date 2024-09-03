@@ -1088,6 +1088,7 @@ import timeit
 
 # def gravacao():
 #     arq = open("Faculdade\\Exercicios-Programas-Python\\altura.txt", "w")
+#     arq.write("Nome - Altura\n")
 #     for i in range(5):
 #         nome = input("Digite um nome: ")
 #         altura = random.randint(150,200)/100
@@ -1096,6 +1097,7 @@ import timeit
 # def leitura():
 #     alunos = []
 #     arq = open("Faculdade\\Exercicios-Programas-Python\\altura.txt", "r")
+#     arq.readline()
 #     for i in arq:
 #         linha = i[:-1].split(" - ")
 #         alunos.append((linha[0],float(linha[1])))
@@ -1114,3 +1116,169 @@ import timeit
 # print(f"Nome do mais alto: {maisAlto}, com {altMaisAlto}m")
 # print(f"Media das alturas: {(somaAltura/len(listaAlunos)):0.2f}")
 
+# Listas aninhadas e abrangencia de listas
+# lista = [item+1 for item in range(10)]
+# quadrados = [item**2 for item in lista]
+# print(quadrados)
+# quadrados2 = [item**2 for item in lista if item%2==0]
+# print(quadrados2)
+# matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+# print(matriz)
+# matriz[0][0] = 15
+# print(matriz)
+
+# Segmentando frases
+# frases = ["Eu estudo na puc", "O sol nasceu", "Deitei na cama"]
+# tokens = []
+# for i in frases:
+#     tokens.append(i.split())
+# print(tokens)
+# for i in tokens:
+#     print("Frase: ", i)
+#     for e in i:
+#         print(e)
+
+# Gráficos
+import folium.map
+import matplotlib.pyplot as plt
+# plt.plot([2,4,9,16],[1,2,3,4])
+# plt.show()
+# listax = [item for item in range(11)]
+# listay = [item**2 for item in range(11)]
+# listay2 = [item**3 for item in range(11)]
+# plt.plot(listax, listay, 'b-', label="$x^2$")
+# plt.plot(listax, listay2, 'r-', label="$x^3$")
+# plt.title("$x^2$ e $x^3$")
+# plt.legend()
+# plt.show()
+
+# anos = [a for a in range(1990, 2011)]
+# valores = [random.randint(100, 1500) for v in range(len(anos))]
+
+# plt.bar(anos, valores)
+# # Realiza as divisões dos valores apresentaveis
+# plt.xticks(range(1990, 2011, 2))
+# plt.show()
+
+# random.seed(42)
+# valores = [random.randint(0, 11) for item in range(0, 100)]
+# x = [item+0.5 for item in range(0, 11)]
+# plt.hist(valores, x)
+# print(x)
+# print(valores)
+# plt.show()
+
+# Biblioteca folium gera mapas interativos, interessante para mostrar
+# Latitudes e longitudes
+# import folium
+
+# Dicionarios
+# dic = {}
+# dic["Fulano"] = "99817-9123"
+# dic["Beltrano"] = "99671-7562"
+# dic["Ciclano"] = "99881-1642"
+# del dic["Fulano"]
+# nome = ""
+# while nome != "fim":
+#     print(dic.keys(), "\n",
+#           dic.values(), "\n",
+#           dic.items(), "\n",
+#           dic.get("Fulano"))
+#     nome = input("Nome para procurar (Digite fim para sair)")
+#     if nome != "fim":
+#         if nome in dic:
+#             print(f"Telefone: {dic[nome]}")
+#         else:
+#             print("Nome não encontrado!")
+
+# Operações de acesso aos dicionários
+# dic = {}
+# dic["Fulano"] = "99817-9123"
+# dic["Beltrano"] = "99671-7562"
+# dic["Ciclano"] = "99881-1642"
+# print(dic.keys(), "\n",
+#           dic.values(), "\n",
+#           dic.items(), "\n",
+#           dic.get("Fulano"))
+# for k in dic.keys():
+#     print(f"Chave: {k}")
+# for v in dic.values():
+#     print(f"Valor: {v}")
+# print("Chaves e valores em ordem de inclusão: ")
+# for k, v in dic.items():
+#     print(f"{k:8} -> {v}") #{k:8} aumenta a quantidade de caracteres para deixar no mesmo tamanho.
+# print("Ordenado pelas chaves: ")
+# for k,v in sorted(dic.items()):
+#     print(f"{k:8} -> {v}")
+# print("Ordenado pelos valores: ")
+# for k,v in sorted(dic.items(), key=lambda x: x[1]):
+#     print(f"{k:8} -> {v}")
+#     print (lambda x:x[0])
+#     print (lambda x:x[1])
+
+# Conjuntos
+# conj1 = set()
+# conj2 = {2,4,6,8}
+# # Operações:
+# # conj1.add(elem)
+# # conj1.remove(elem)
+# # conj1.pop()
+# # conj1.clear()
+# a = {1,2,3,4,5,6}
+# b = {4,5,6,7,8,9}
+# print(a)
+# print(b)
+# # a | b:
+# print("uniao:", a.union(b))
+# # a & b:
+# print("Intersecção:", a.intersection(b))
+# # a - b:
+# print("Diferença:", a.difference(b))
+# # a ^ b : Sem os elementos comuns
+# print("Sem os elementos em comum:", a.symmetric_difference(b))
+
+# print(a.isdisjoint(b)) # True se A e B não tem elementos em comum
+# print(a.issubset(b)) # True se B contém todos os elementos de A
+# print(a.issuperset(b)) # True se B está contido em A
+
+# Busca de letras em um texto
+# frase = input("Texto: ").lower()
+# frase = "texte de texto"
+# hist = {}
+# alphabet = set(string.ascii_lowercase)
+# for l in frase:
+#     if l not in hist and l != " ":
+#         hist[l] = frase.count(l)
+# usadas = set(hist.keys())
+# for chave in sorted(hist.keys()):
+#     print(f"{chave} -> {hist[chave]}")
+# print("Letras utilizadas: ")
+# print(sorted(usadas))
+# print("Letras não utilizadas: ")
+# print(sorted(alphabet.difference(usadas)))
+
+# import nltk
+
+# nltk.download("stopwords")
+# stopwords = nltk.corpus.stopwords.words('portuguese')
+# freq = {}
+
+# print(pontuacao)
+# file = open(
+#     "Faculdade\\Exercicios-Programas-Python\\domcasmurro.txt", encoding="utf8")
+# content = file.readlines()
+# content = content[61:]
+
+# for linha in content:
+#     linha = linha.lower()[:-1]
+#     for pont in string.punctuation:
+#         linha = linha.replace(pont, "")
+#     for palavra in linha.split(" "):
+#         if len(palavra) < 3 or palavra in stopwords:
+#             continue
+#         if palavra not in freq:
+#             freq[palavra] = 0
+#         freq[palavra] += 1
+
+# for x, v in sorted(freq.items(), key=lambda x: x[1], reverse=True)[:30]:
+#     print(f"{x:3} -> {v}")
