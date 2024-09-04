@@ -1,7 +1,11 @@
+from folium.plugins import MarkerCluster
+import folium
 import math
 import random
 import string
 import timeit
+
+import folium.map
 
 # Calculos dois numeros
 # a = int(input("Digite o primeiro valor: "))
@@ -1139,8 +1143,8 @@ import timeit
 #         print(e)
 
 # Gráficos
-import folium.map
-import matplotlib.pyplot as plt
+# import folium.map
+# import matplotlib.pyplot as plt
 # plt.plot([2,4,9,16],[1,2,3,4])
 # plt.show()
 # listax = [item for item in range(11)]
@@ -1258,17 +1262,14 @@ import matplotlib.pyplot as plt
 # print(sorted(alphabet.difference(usadas)))
 
 # import nltk
-
 # nltk.download("stopwords")
 # stopwords = nltk.corpus.stopwords.words('portuguese')
 # freq = {}
-
 # print(pontuacao)
 # file = open(
 #     "Faculdade\\Exercicios-Programas-Python\\domcasmurro.txt", encoding="utf8")
 # content = file.readlines()
 # content = content[61:]
-
 # for linha in content:
 #     linha = linha.lower()[:-1]
 #     for pont in string.punctuation:
@@ -1279,6 +1280,44 @@ import matplotlib.pyplot as plt
 #         if palavra not in freq:
 #             freq[palavra] = 0
 #         freq[palavra] += 1
-
 # for x, v in sorted(freq.items(), key=lambda x: x[1], reverse=True)[:30]:
 #     print(f"{x:3} -> {v}")
+
+# Função lambda
+# lista = ["A", "b", "Roxo", "azul", "Preto", "l", "124"]
+# print(lista)
+# print(sorted(lista))
+# print(sorted(lista, key=lambda x: x.lower()))
+
+# Trabalhando com dados
+# unidades = {}
+# with open("Faculdade\\Exercicios-Programas-Python\\Unidades_Basicas_Saude-UBS.csv") as csv:
+#     csv.readline()
+#     for linha in csv:
+#         aux = linha[:-1].split(";")
+#         lat = aux[6]
+#         lon = aux[7]
+#         uf = aux[1]
+#         if lat != '' and lon != '' and uf == "43":
+#             nome = aux[3][1:-1]
+#             logr = aux[4][1:-1]
+#             bairro = aux[5][1:-1]
+#             lat = float(lat.replace(",", "."))
+#             lon = float(lon.replace(",", "."))
+
+#             unidades[nome] = (logr, bairro, lat, lon)
+# ubs = input("Digite o nome da unidade: ").upper()
+# if ubs in unidades:
+#     print(unidades[ubs])
+# else:
+#     for nome in unidades.keys():
+#         if ubs in nome:
+#             print("Unidade encontrada: ", nome, unidades[nome])
+# map = folium.Map(location=[-40.161034, -52.098611], zoom_start=6, min_zoom=5)
+# marker_cluster = MarkerCluster().add_to(map)
+# for aux in unidades.values():
+#     folium.CircleMarker(radius=1, location=[
+#                         aux[2], aux[3]]).add_to(marker_cluster)
+# map.show_in_browser()
+
+
