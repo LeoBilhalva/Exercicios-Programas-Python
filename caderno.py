@@ -1,11 +1,11 @@
 from folium.plugins import MarkerCluster
+import folium.map
 import folium
 import math
 import random
 import string
 import timeit
-
-import folium.map
+import matplotlib.pyplot as plt
 
 # Calculos dois numeros
 # a = int(input("Digite o primeiro valor: "))
@@ -1143,8 +1143,6 @@ import folium.map
 #         print(e)
 
 # Gráficos
-# import folium.map
-# import matplotlib.pyplot as plt
 # plt.plot([2,4,9,16],[1,2,3,4])
 # plt.show()
 # listax = [item for item in range(11)]
@@ -1155,15 +1153,12 @@ import folium.map
 # plt.title("$x^2$ e $x^3$")
 # plt.legend()
 # plt.show()
-
 # anos = [a for a in range(1990, 2011)]
 # valores = [random.randint(100, 1500) for v in range(len(anos))]
-
 # plt.bar(anos, valores)
 # # Realiza as divisões dos valores apresentaveis
 # plt.xticks(range(1990, 2011, 2))
 # plt.show()
-
 # random.seed(42)
 # valores = [random.randint(0, 11) for item in range(0, 100)]
 # x = [item+0.5 for item in range(0, 11)]
@@ -1320,4 +1315,36 @@ import folium.map
 #                         aux[2], aux[3]]).add_to(marker_cluster)
 # map.show_in_browser()
 
+# Simulação de lançamento
+# g = 9.80665
+# x = 0
+# ang = float(input("Digite o angulo: "))
+# y0 = float(input("Digite a altura inicial: "))
+# v = float(input("Digite a velocidade inicial (m/s): "))
+# y = y0
+# listaX = []
+# listaY = []
+# ang = math.radians(ang)
+# while y >= 0:
+#     if x != 0:
+#         listaX.append(x)
+#         listaY.append(y)
+#     y = x*math.tan(ang) - ((1/(2*v**2)) * ((g*x**2)/(math.cos(ang)**2))) + y0
+#     x += 0.1
+# plt.ylabel("Altura")
+# plt.xlabel("Distancia")
+# plt.plot(listaX, listaY, "bo")
+# plt.show()
 
+# Fibonacci
+def fibo(n):
+    num1 = 1
+    num2 = 1
+    aurea = (1 + math.sqrt(5))/2
+    print(num1)
+    for i in range(n):
+        print(f"{num1}")
+        num2, num1 = num1, num1 + num2
+
+
+fibo(100)
